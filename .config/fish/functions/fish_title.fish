@@ -1,1 +1,0 @@
-/Users/sfuku/.config/fisherman/bobthefish/fish_title.fish
