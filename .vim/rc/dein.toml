@@ -1,0 +1,21 @@
+# 基本は github.com のレポジトリーを指定するだけ
+[[plugins]]
+repo = 'Shougo/dein.vim'
+[[plugins]]
+repo = 'lambdalisue/vim-pyenv'
+[[plugins]] # vim-hug-neovim-rpc
+repo = 'roxma/vim-hug-neovim-rpc'
+[[plugins]]
+repo = 'roxma/nvim-completion-manager'
+[[plugins]]
+repo = 'roxma/nvim-yarp'
+[[plugins]]
+repo = 'jalvesaq/Nvim-R'
+[[plugins]]
+repo = 'gaalcaras/ncm-R'
+[[plugins]]
+repo = 'w0rp/ale'
+[[plugins]]
+repo = 'powerline/powerline'
+[[plugins]]
+repo = 'davidhalter/jedi-vim'

@@ -1,14 +1,23 @@
+if has('python3')
+endif
+let $PATH = "~/.pyenv/shims:".$PATH
+
+
 " どこか最初の方に書いておく
 augroup MyAutoCmd
   autocmd!
 augroup END
 
 " Use python3
+set pythonthreedll="~/.pyenv/versions/3.6.5/lib/libpython3.6m.a
+
+" powerline"
 let g:powerline_pycmd="python3"
-" Powerline
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+set rtp+=/Users/sfuku/.pyenv/versions/3.6.5/lib/python3.6/site-packages/powerline/bindings/vim
+
+set laststatus=2
+set showtabline=2
+set noshowmode
 
 """ 表示関係
 set t_Co=256
@@ -129,25 +138,39 @@ autocmd MyAutoCmd VimEnter * call s:ChangeCurrentDir('', '')
 """""""""""""""""""""""""""
 "      dein               "
 """"""""""""""""""""""""""
-if &compatible
- set nocompatible
-endif
-" Add the dein installation directory into runtimepath
-set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+" プラグインが実際にインストールされるディレクトリ
+let s:dein_dir = expand('~/.cache/dein')
+" dein.vim 本体
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
-if dein#load_state('~/.cache/dein')
- call dein#begin('~/.cache/dein')
-
- call dein#add('~/.cache/dein')
- call dein#add('Shougo/deoplete.nvim')
- if !has('nvim')
-   call dein#add('roxma/nvim-yarp')
-   call dein#add('roxma/vim-hug-neovim-rpc')
- endif
-
- call dein#end()
- call dein#save_state()
+" dein.vim がなければ github から落としてくる
+if &runtimepath !~# '/dein.vim'
+  if !isdirectory(s:dein_repo_dir)
+    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+  endif
+  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
 endif
 
-filetype plugin indent on
-syntax enable
+" 設定開始
+if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir)
+
+  " プラグインリストを収めた TOML ファイル
+  " 予め TOML ファイル（後述）を用意しておく
+  let g:rc_dir    = expand('~/.vim/rc')
+  let s:toml      = g:rc_dir . '/dein.toml'
+  let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
+
+  " TOML を読み込み、キャッシュしておく
+  call dein#load_toml(s:toml,      {'lazy': 0})
+  call dein#load_toml(s:lazy_toml, {'lazy': 1})
+
+  " 設定終了
+  call dein#end()
+  call dein#save_state()
+endif
+
+" もし、未インストールものものがあったらインストール
+if dein#check_install()
+  call dein#install()
+endif
