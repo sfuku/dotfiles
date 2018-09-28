@@ -1,0 +1,1 @@
+/Users/sfuku/.config/fisherman/expand/functions/expand-word.fish

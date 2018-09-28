@@ -37,7 +37,11 @@
 			{
 				"function": "powerline.segments.common.vcs.branch",
 				"priority": 40
+			},
+			{
+				"location_query": "kanazawa, japan"
 			}
+
 		]
 	}
 }

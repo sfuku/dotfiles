@@ -1,0 +1,1 @@
+/Users/sfuku/.config/fisherman/ghq/completions/ghq.fish

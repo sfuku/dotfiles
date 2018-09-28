@@ -1,0 +1,1 @@
+/Users/sfuku/.config/fisherman/bass/functions/bass.fish

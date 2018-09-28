@@ -83,7 +83,7 @@
 					"not_available": "�",
 					"unknown":       "⚠"
 				},
-				"location_query": "kanazawa, japan"
+				"location_query": "tokyo, japan"
 			}
 		},
 		"powerline.segments.common.time.fuzzy_time": {

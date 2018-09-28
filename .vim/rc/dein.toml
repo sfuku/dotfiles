@@ -2,20 +2,10 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 [[plugins]]
-repo = 'lambdalisue/vim-pyenv'
-[[plugins]] # vim-hug-neovim-rpc
-repo = 'roxma/vim-hug-neovim-rpc'
+repo = 'vim-airline/vim-airline'
 [[plugins]]
-repo = 'roxma/nvim-completion-manager'
+repo = 'vim-airline/vim-airline-themes'
 [[plugins]]
-repo = 'roxma/nvim-yarp'
+repo = '/usr/local/opt/fzf'
 [[plugins]]
-repo = 'jalvesaq/Nvim-R'
-[[plugins]]
-repo = 'gaalcaras/ncm-R'
-[[plugins]]
-repo = 'w0rp/ale'
-[[plugins]]
-repo = 'powerline/powerline'
-[[plugins]]
-repo = 'davidhalter/jedi-vim'
+repo = 'junegunn/fzf.vim'
