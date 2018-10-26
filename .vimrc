@@ -1,4 +1,11 @@
+
+" 日本語文字化け対策
+set encoding=utf-8
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileformats=unix,dos,mac
+
 " Powerline系フォントを利用する
+set ambiwidth=double
 set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -148,3 +155,4 @@ set hlsearch
 
 
 syntax enable
+

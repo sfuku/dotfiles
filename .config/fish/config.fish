@@ -11,3 +11,8 @@ set -x LESS_TERMCAP_se (printf "\e[0m")
 set -x LESS_TERMCAP_so (printf "\e[01;44;33m")
 set -x LESS_TERMCAP_ue (printf "\e[0m")
 set -x LESS_TERMCAP_us (printf "\e[01;32m")
+set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
+
+
+# encoding
+set -x LANG ja_JP.UTF-8
